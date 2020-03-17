@@ -9,7 +9,7 @@ const Counter = ({currentCount, addOne, addTen, subtractOne, subtractTen, custom
     const [subtract, setSubtract] = useState(0)
 
     const setVal = e => {
-        const val = parseInt(e.target.value)
+        const val = e.target.value
         switch (e.target.name) {
             case "add":
                 return setAdd(val)

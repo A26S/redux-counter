@@ -3,7 +3,6 @@ const init = {
 }
 
 const countReducer = (state = init, action) => {
-    action.val = parseInt(action.val)
     switch (action.type) {
         case "ADD_ONE":
             return {
