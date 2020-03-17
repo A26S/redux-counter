@@ -1,0 +1,6 @@
+export const ADD_ONE = "ADD_ONE"
+export const ADD_TEN = "ADD_TEN"
+export const SUBTRACT_ONE = "SUBTRACT_ONE"
+export const SUBTRACT_TEN = "SUBTRACT_TEN"
+export const CUSTOM_ADD = "CUSTOM_ADD"
+export const CUSTOM_SUBTRACT = "CUSTOM_SUBTRACT"

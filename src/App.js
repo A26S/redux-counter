@@ -1,26 +1,21 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from 'react';
+import Counter from './components/Counter';
 
-function App() {
+const App = () => {
+
+  useEffect(() => {
+    console.clear()
+    console.log("%cPerform an action to watch redux in action!", 
+      "font-size: 2rem; color: blanchedalmond")
+  }, [])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <React.Fragment>
+      <h1>counter with redux</h1>
+      <em>open your console...<br/>or use the Redux DevTools to travel through time!</em>
+      <Counter/>
+    </React.Fragment>
+  )
 }
 
 export default App;

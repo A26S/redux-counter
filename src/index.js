@@ -1,12 +1,33 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
+import { createStore, applyMiddleware, compose } from 'redux'
 import './index.css';
 import App from './App';
-import * as serviceWorker from './serviceWorker';
+import { rootReducer } from './store/reducers/rootReducer';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+// MIDDLEWARE
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+
+const actionLogger = store => {
+    return next => {
+        return action => {
+            console.clear()
+            console.groupCollapsed('You dispatched this action: %o', action)
+            console.log('...making the counter\'s state go from', store.getState().counter.count)
+            next(action)
+            console.log('...to', store.getState().counter.count)
+        }
+    }
+}
+
+
+// STORE
+const store = createStore(rootReducer, composeEnhancers(applyMiddleware(actionLogger)))
+
+ReactDOM.render(
+<Provider store={store}>
+    <App />
+</Provider>,
+document.getElementById('root'));
