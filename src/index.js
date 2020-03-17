@@ -19,10 +19,10 @@ const parseInteger = store => next => action => {
 
 const actionLogger = store => next => action => {
     console.clear()
-    console.groupCollapsed('You dispatched this action: %o', action)
-    console.log('...making the counter\'s state go from', store.getState().counter.count)
+    console.groupCollapsed('%cYou dispatched this action: %o', 'color: blanchedalmond;', action)
+    console.log('%c...making the counter\'s state go from', 'color: blanchedalmond;', store.getState().counter.count)
     next(action)
-    console.log('...to', store.getState().counter.count)
+    console.log('%c...to', 'color: blanchedalmond;', store.getState().counter.count)
 }
 
 // STORE

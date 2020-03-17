@@ -9,7 +9,7 @@ const Counter = ({currentCount, addOne, addTen, subtractOne, subtractTen, custom
     const [subtract, setSubtract] = useState(0)
 
     const setVal = e => {
-        const val = e.target.value
+        const val = parseInt(e.target.value)
         switch (e.target.name) {
             case "add":
                 return setAdd(val)
@@ -40,7 +40,7 @@ const Counter = ({currentCount, addOne, addTen, subtractOne, subtractTen, custom
                 <form className="input" onSubmit={handleAdd}>
                     <h4>...or ADD your own value</h4>
                     <input type="number" onChange={setVal} name="add" value={add}/>
-                    <input type="submit" value="ADDT"/>
+                    <input type="submit" value="ADD"/>
                 </form>
                 <form className="input" onSubmit={handleSubtract}>
                     <h4>...or SUBTRACT your own value</h4>

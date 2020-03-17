@@ -82,9 +82,15 @@ input[type="number"] {
   border: 1px solid blanchedalmond;
   outline: none;
 }
+
 input[type="submit"] {
   background-color: transparent;
   color: blanchedalmond;
+  height: 40px;
+  width: 70px;
+  border: 1px solid blanchedalmond;
+  border-top: none;
+  outline: none;
 }
 
 input::-webkit-inner-spin-button,
